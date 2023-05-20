@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body>
+  <body class="bg-gradient-to-br from-yellow-400 via-cyan-500 to-yellow-400">
     <header>
       <nav
         class="flex justify-between bg-lime-400 p-5 transition-colors duration-[1s] hover:bg-[#ffa600]"
@@ -31,14 +31,14 @@
             width="400px"
           />
         </div>
-        <div class="">
+        <div class="intro">
           <h2 class="text-[3rem] font-bold">Alexa</h2>
           <span class="font-medium text-gray-800">I am a Web Developer</span>
         </div>
       </div>
       <article class="mx-10">
         <section class="mt-16 space-y-6">
-          <h1 class="custom-h1">About Me</h1>
+          <h1 class="flex justify-center text-4xl font-medium">About Me</h1>
           <p class="font-normal md:leading-8">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque
             deleniti nisi repellat laudantium odio autem sapiente, alias
@@ -50,7 +50,7 @@
           </p>
         </section>
         <section class="mt-10 space-y-6">
-          <h1 class="custom-h1">My Skills</h1>
+          <h1 class="flex justify-center text-4xl font-medium">My Skills</h1>
           <div class="grid grid-cols-3 place-items-center gap-8">
             <img
               class=""
@@ -121,14 +121,14 @@
           </div>
         </section>
         <section class="mt-10 space-y-6">
-          <h1 class="custom-h1">Contact Me</h1>
+          <h1 class="flex justify-center text-4xl font-medium">Contact Me</h1>
           <form class="flex flex-col items-center space-y-2">
             <label for="name">Enter Your Name : </label>
-            <input class="input-field h-11 w-[80%] md:w-[50%]" type="text" />
+            <input class="rounded-lg border-2 border-red-500 p-5 h-11 w-[80%] md:w-[50%]" type="text" />
             <label for="email">Enter Your Email : </label>
-            <input class="input-field h-11 w-[80%] md:w-[50%]" type="text" />
+            <input class="rounded-lg border-2 border-red-500 p-5 h-11 w-[80%] md:w-[50%]" type="text" />
             <label for="message">Enter Your message : </label>
-            <textarea class="input-field w-[80%] md:w-[50%]"></textarea>
+            <textarea class="rounded-lg border-2 border-red-500 p-5 w-[80%] md:w-[50%]"></textarea>
             <span>
               <button class="rounded-lg bg-red-500 p-2 text-white">
                 Submit
@@ -143,5 +143,7 @@
     >
       Copyright @ 2022 Alexa. All rights Reserved
     </footer>
-  </body>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</body>
 </html>
