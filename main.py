@@ -5,16 +5,27 @@ html_text = requests.get('https://www.timesjobs.com/candidate/job-search.html?se
 
 soup = BeautifulSoup(html_text, 'lxml')
 
-job = soup.find('li', class_ = 'clearfix job-bx wht-shd-bx')
 
-comp_name = job.find('h3', class_ = 'joblist-comp-name').text.replace(' ', '')
+exclude_skills = input("Enter the skills that you want to exclude: ").split()
 
-skills = job.find('span', class_ = 'srp-skills').text.replace(' ', '')
+def findJob():
+    jobs = soup.find_all('li', class_ = 'clearfix job-bx wht-shd-bx')
+    for job in jobs:
+        pub_date = job.find('span', class_ = 'sim-posted').span.text.replace(' ', '')
+        if 'few' in pub_date:
+            skills = job.find('span', class_ = 'srp-skills').text.replace(' ', '')
+            if not any(skill in skills for skill in exclude_skills):
+                #or if all(skill not in skills for skill in exclude_skills):
+                comp_name = job.find('h3', class_ = 'joblist-comp-name').text.replace(' ', '') 
 
-print(f'''
-Company Name: {comp_name}
-Required Skills: {skills}
-''')
+                print(f"Company Name: {comp_name.strip()}")
+                print(f"Skills: {skills.strip()}")
+                print(" ")
+
+
+
+findJob()
+
 
 
 """ with open('home.html', 'r') as html_file:
